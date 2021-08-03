@@ -1,7 +1,7 @@
 function calculator(string) {
 
   //This converter from Wiki
-  var converter = {
+  let converter = {
 
     arab: [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000],
     roman: ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],
@@ -9,8 +9,8 @@ function calculator(string) {
     arabToRoman: function(number) {
       if (!number) return '';
 
-      var ret = '';
-      var i = this.arab.length - 1;
+      let ret = '';
+      let i = this.arab.length - 1;
       while (number > 0) {
         if (number >= this.arab[i]) {
           ret += this.roman[i];
@@ -24,9 +24,9 @@ function calculator(string) {
     romanToArab: function(str) {
 
       str = str.toUpperCase();
-      var ret = 0;
-      var i = this.arab.length - 1;
-      var pos = 0;
+      let ret = 0;
+      let i = this.arab.length - 1;
+      let pos = 0;
       while (i >= 0 && pos < str.length) {
         if (str.substr(pos, this.roman[i].length) == this.roman[i]) {
           ret += this.arab[i];
@@ -39,7 +39,7 @@ function calculator(string) {
     }
   }
 
-  var calculator = {
+  let calculator = {
 
     digitSets: {
       arab: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
